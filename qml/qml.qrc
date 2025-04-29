@@ -1,0 +1,10 @@
+<RCC>
+    <qresource prefix="/">
+        <file>Main.qml</file>
+        <file>MainContent.qml</file>
+        <file>Canvas.qml</file>
+        <file>PermissionReq.qml</file>
+        <file>Permission-denied.qml</file>
+        <file alias="webcam.svg">res/webcam.svg</file>
+    </qresource>
+</RCC>
