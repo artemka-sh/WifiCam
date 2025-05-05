@@ -24,6 +24,7 @@ qt_add_qml_module(appWifiCam
         qml/Main.qml
         qml/MainContent.qml
         qml/Canvas.qml
+        qml/Header.qml
         qml/PermissionReq.qml
         qml/Permission-denied.qml
     SOURCES
@@ -31,6 +32,8 @@ qt_add_qml_module(appWifiCam
         src/clienthttpserver.cpp
         RESOURCES qml/qml.qrc
 )
+
+add_subdirectory(deps/MobileUI/)
 
 set_target_properties(appWifiCam PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
@@ -48,6 +51,7 @@ target_link_libraries(appWifiCam
     Qt6::HttpServer
     Qt6::Multimedia
     Qt6::QuickControls2
+    MobileUI::MobileUI
 )
 
 qt_finalize_target(appWifiCam)

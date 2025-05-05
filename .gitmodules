@@ -1,0 +1,3 @@
+[submodule "deps/MobileUI"]
+	path = deps/MobileUI
+	url = https://github.com/emericg/MobileUI

@@ -6,5 +6,8 @@
         <file>PermissionReq.qml</file>
         <file>Permission-denied.qml</file>
         <file alias="webcam.svg">res/webcam.svg</file>
+        <file alias="configuration.svg">res/configuration.svg</file>
+        <file alias="switch_camera.svg">res/switch_camera.svg</file>
+        <file>Header.qml</file>
     </qresource>
 </RCC>

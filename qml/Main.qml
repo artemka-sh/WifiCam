@@ -12,8 +12,8 @@ ApplicationWindow {
     minimumWidth: 480
     minimumHeight: 960
 
-
-    flags: Qt.Window | Qt.MaximizeUsingFullscreenGeometryHint
+    flags: Qt.Window
+    visibility: Window.AutomaticVisibility
     color: Theme.colorBackground
     visible: true
 
