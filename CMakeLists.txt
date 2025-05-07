@@ -8,7 +8,7 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_INCLUDE_CURRENT_DIR ON)
 
-find_package(Qt6 REQUIRED COMPONENTS Quick HttpServer Core Gui Qml Multimedia QuickControls2)
+find_package(Qt6 REQUIRED COMPONENTS Quick HttpServer Core Gui Qml Multimedia QuickControls2 Network)
 
 qt_standard_project_setup(REQUIRES 6.5)
 
@@ -29,6 +29,7 @@ qt_add_qml_module(appWifiCam
         qml/Permission-denied.qml
     SOURCES
         src/clienthttpserver.h
+        src/networkinfo.h
         src/clienthttpserver.cpp
         RESOURCES qml/qml.qrc
 )
@@ -51,7 +52,9 @@ target_link_libraries(appWifiCam
     Qt6::HttpServer
     Qt6::Multimedia
     Qt6::QuickControls2
+    Qt6::Network
     MobileUI::MobileUI
+
 )
 
 qt_finalize_target(appWifiCam)

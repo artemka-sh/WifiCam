@@ -79,6 +79,10 @@ Rectangle{
                     fillMode: Image.PreserveAspectFit
                     anchors.centerIn: parent
                 }
+
+                onClicked: {
+                    win.color = Qt.rgba(Math.random(), Math.random(), Math.random());
+                }
             }
 
             RoundButton {
