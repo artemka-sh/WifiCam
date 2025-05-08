@@ -57,6 +57,12 @@ int main(int argc, char *argv[]) {
         qDebug() << "Camera error:" << error << errorString;
     });
 
+    ///////////////////////////////////////////
+    ///                                                     ЗДЕСЬ БЫЛ СЕРВЕР
+    /// ////////////////////////////////////////
+    ///
+    ///
+    ///
     // Настройка TCP-сервера
     QTcpServer server;
     QSet<QTcpSocket*> clients; // Храним клиентов
@@ -103,6 +109,8 @@ int main(int argc, char *argv[]) {
             qDebug() << "Socket error:" << error;
         });
     });
+
+
 
     // Таймер для отправки кадров всем клиентам
     QTimer timer;

@@ -12,11 +12,4 @@ Item {
         anchors.fill: parent
     }
 
-    // Text {
-    //     anchors.top: parent.top
-    //     anchors.horizontalCenter: parent.horizontalCenter
-    //     text: "Canvas Loaded"
-    //     color: "white"
-    //     font.pixelSize: 24
-    // }
 }

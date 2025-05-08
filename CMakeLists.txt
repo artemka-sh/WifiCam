@@ -25,6 +25,7 @@ qt_add_qml_module(appWifiCam
         qml/MainContent.qml
         qml/Canvas.qml
         qml/Header.qml
+        qml/ConnectInfo.qml
         qml/PermissionReq.qml
         qml/Permission-denied.qml
     SOURCES
@@ -32,6 +33,7 @@ qt_add_qml_module(appWifiCam
         src/networkinfo.h
         src/clienthttpserver.cpp
         RESOURCES qml/qml.qrc
+        SOURCES src/mjpegserver.h src/mjpegserver.cpp
 )
 
 add_subdirectory(deps/MobileUI/)
