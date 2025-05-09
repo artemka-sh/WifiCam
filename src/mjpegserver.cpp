@@ -5,19 +5,24 @@ MJPEGServer::MJPEGServer(QObject *parent)
 {
     QObject::connect(&server, &QTcpServer::newConnection, this, &MJPEGServer::newConnection);
     QObject::connect(&timer, &QTimer::timeout, this, &MJPEGServer::sendFrames);
-    // Очистка при отключении
-    QObject::connect(socket, &QTcpSocket::disconnected, [socket, &clients]() {
-        qDebug() << "Client disconnected:" << socket->peerAddress().toString();
-        clients.remove(socket);
-        socket->deleteLater();
-    });
 
-    QObject::connect(socket, &QTcpSocket::errorOccurred, [socket](QAbstractSocket::SocketError error) {
-        qDebug() << "Socket error:" << error;
-    });
-    startServer();
 }
 
+MJPEGServer::~MJPEGServer()
+{
+    timer.stop();
+    for (QTcpSocket *socket : clients) {
+        socket->disconnectFromHost();
+        socket->deleteLater();
+    }
+    clients.clear();
+    server.close();
+}
+
+void MJPEGServer::setLastFrame(const QImage &frame)
+{
+    lastFrame = frame;
+}
 
 void MJPEGServer::newConnection() {
     QTcpSocket *socket = server.nextPendingConnection();
@@ -43,7 +48,8 @@ void MJPEGServer::newConnection() {
 
     clients.insert(socket);
 
-
+    connect(socket, &QTcpSocket::disconnected, this, &MJPEGServer::handleClientDisconnected);
+    connect(socket, &QTcpSocket::errorOccurred, this, &MJPEGServer::handleSocketError);
 }
 
 
@@ -87,6 +93,25 @@ void MJPEGServer::sendFrames() {
     }
 }
 
+void MJPEGServer::handleClientDisconnected()
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (socket) {
+        qDebug() << "Client disconnected:" << socket->peerAddress().toString();
+        clients.remove(socket);
+        socket->deleteLater();
+    }
+}
+
+void MJPEGServer::handleSocketError(QAbstractSocket::SocketError error)
+{
+    QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
+    if (socket) {
+        qDebug() << "Socket error:" << error;
+    }
+}
+
+
 int MJPEGServer::startServer()
 {
     if (!server.listen(QHostAddress::Any, 8081)) {
@@ -95,4 +120,21 @@ int MJPEGServer::startServer()
     }
     qDebug() << "Server running on port 8081";
     timer.start(50); // ~20 FPS
+}
+
+int MJPEGServer::startServer()
+{
+    if (server.isListening()) {
+        qDebug() << "Server already running";
+        return -1;
+    }
+
+    if (!server.listen(QHostAddress::Any, 8081)) {
+        qDebug() << "Failed to listen on 8081";
+        return -2;
+    }
+
+    qDebug() << "Server running on port 8081";
+    timer.start(50); // ~20 FPS
+    return 0;
 }

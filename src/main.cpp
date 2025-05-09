@@ -1,12 +1,6 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
 
-#include <QMediaDevices>
-#include <QMediaCaptureSession>
-#include <QCamera>
-#include <QVideoSink>
-#include <QImage>
-
 
 #include <QSet>
 #include <QDebug>

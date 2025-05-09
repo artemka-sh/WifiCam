@@ -17,7 +17,10 @@ private:
 public:
     explicit MJPEGServer(QObject *parent = nullptr);
     void newConnection();
+    void setLastFrame(const QImage &frame);
     void sendFrames();
+    void handleClientDisconnected();
+    void handleSocketError(QAbstractSocket::SocketError error);
     int startServer();
 signals:
 };

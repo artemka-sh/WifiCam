@@ -2,50 +2,30 @@
 #define CAMERACONTROLLER_H
 
 #include <QObject>
+#include <QCamera>
+#include <QMediaCaptureSession>
+#include <QVideoSink>
+#include <QImage>
+
 
 class CameraController : public QObject
 {
     Q_OBJECT
+private:
+    QCamera* camera;
+    QMediaCaptureSession captureSession;
+    QVideoSink* videoSink;
+    QImage lastFrame;
+
 public:
     explicit CameraController(QObject *parent = nullptr);
+    ~CameraController();
+    void startCamera();
+    QImage getLastFrame() const;
 
-signals:
+private slots:
+    void handleVideoFrameChanged(const QVideoFrame &frame);
+    void handleCameraError(QCamera::Error error, const QString &errorString);
 };
 
 #endif // CAMERACONTROLLER_H
-
-
-
-
-
-
-// Настройка камеры
-const QList<QCameraDevice> cameras = QMediaDevices::videoInputs();
-if (cameras.isEmpty()) {
-    qDebug() << "No cameras found";
-    return -1;
-}
-qDebug() << "Found cameras:" << cameras.size();
-
-QCamera *camera = new QCamera(cameras.first());
-QMediaCaptureSession captureSession;
-captureSession.setCamera(camera);
-
-QVideoSink *videoSink = new QVideoSink();
-captureSession.setVideoSink(videoSink);
-
-QImage lastFrame;
-
-QObject::connect(videoSink, &QVideoSink::videoFrameChanged, [&lastFrame](const QVideoFrame &frame) {
-    QImage image = frame.toImage();
-    if (!image.isNull()) {
-        lastFrame = image.scaled(640, 480, Qt::KeepAspectRatio);
-        qDebug() << "Captured frame:" << lastFrame.size();
-    } else {
-        qDebug() << "Null frame received";
-    }
-});
-
-QObject::connect(camera, &QCamera::errorOccurred, [](QCamera::Error error, const QString &errorString) {
-    qDebug() << "Camera error:" << error << errorString;
-});
