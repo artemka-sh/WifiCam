@@ -32,8 +32,12 @@ qt_add_qml_module(appWifiCam
         src/clienthttpserver.h
         src/networkinfo.h
         src/clienthttpserver.cpp
-        RESOURCES qml/qml.qrc
-        SOURCES src/mjpegserver.h src/mjpegserver.cpp
+        src/mjpegserver.h
+        src/mjpegserver.cpp
+        src/cameracontroller.h
+        src/cameracontroller.cpp
+    RESOURCES qml/qml.qrc
+
 )
 
 add_subdirectory(deps/MobileUI/)
