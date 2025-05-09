@@ -6,6 +6,7 @@
 #include <QMediaCaptureSession>
 #include <QVideoSink>
 #include <QImage>
+#include <QMutex>
 
 
 class CameraController : public QObject
@@ -16,7 +17,7 @@ private:
     QMediaCaptureSession captureSession;
     QVideoSink* videoSink;
     QImage lastFrame;
-
+    mutable QMutex m_frameMutex;
 public:
     explicit CameraController(QObject *parent = nullptr);
     ~CameraController();

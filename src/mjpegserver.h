@@ -6,6 +6,8 @@
 #include <QTcpSocket>
 #include <QTimer>
 #include <QBuffer>
+#include <QImage>
+#include <functional>
 
 class MJPEGServer : public QObject
 {
@@ -13,12 +15,16 @@ class MJPEGServer : public QObject
 private:
     QTcpServer server;
     QTimer timer; //для отправки кадров всем клиентам
+    QImage lastFrame;
     QSet<QTcpSocket*> clients;
+    std::function<QImage()> m_frameProvider;
 public:
     explicit MJPEGServer(QObject *parent = nullptr);
+    virtual ~MJPEGServer();
     void newConnection();
     void setLastFrame(const QImage &frame);
     void sendFrames();
+    void setFrameProvider(std::function<QImage()> provider);
     void handleClientDisconnected();
     void handleSocketError(QAbstractSocket::SocketError error);
     int startServer();

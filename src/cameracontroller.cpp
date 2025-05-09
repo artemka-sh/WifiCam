@@ -39,6 +39,7 @@ void CameraController::startCamera()
 
 QImage CameraController::getLastFrame() const
 {
+    QMutexLocker locker(&m_frameMutex);
     return lastFrame;
 }
 

@@ -7,6 +7,7 @@
 #include <QQmlContext>
 #include "networkinfo.h"
 #include "mjpegserver.h"
+#include "cameracontroller.h"
 //#include <MobileUI>
 
 #include "clienthttpserver.h"
@@ -14,19 +15,17 @@
 int main(int argc, char *argv[]) {
     QGuiApplication app(argc, argv);
 
+    CameraController cameraController;
+    cameraController.startCamera();
 
-
-
-
-
-
-    ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-    ///                                                     ЗДЕСЬ БЫЛ СЕРВЕР
     MJPEGServer mjpegserver;
-    mjpegserver.startServer()
+    mjegserver.setCameraController();
+    mjpegserver.startServer();
 
-    camera->start();
+
     qDebug() << "Camera started";
+
+    void handleVideoFrameChanged(const QVideoFrame &frame);
 
 
     QQmlApplicationEngine engine;
@@ -48,6 +47,30 @@ int main(int argc, char *argv[]) {
 
     return app.exec();
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 // ClientHttpServer clientResponser;

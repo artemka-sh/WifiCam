@@ -93,6 +93,10 @@ void MJPEGServer::sendFrames() {
     }
 }
 
+void MJPEGServer::setFrameProvider(std::function<QVideoFrame()> frameProvider) {
+    m_frameProvider = frameProvider;
+}
+
 void MJPEGServer::handleClientDisconnected()
 {
     QTcpSocket *socket = qobject_cast<QTcpSocket*>(sender());
@@ -112,15 +116,6 @@ void MJPEGServer::handleSocketError(QAbstractSocket::SocketError error)
 }
 
 
-int MJPEGServer::startServer()
-{
-    if (!server.listen(QHostAddress::Any, 8081)) {
-        qDebug() << "Failed to listen on 8081";
-        return -1;
-    }
-    qDebug() << "Server running on port 8081";
-    timer.start(50); // ~20 FPS
-}
 
 int MJPEGServer::startServer()
 {
