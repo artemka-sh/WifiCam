@@ -7,12 +7,15 @@
 #include <QVideoSink>
 #include <QImage>
 #include <QMutex>
+#include <QDebug>
+#include <QMediaDevices>
 
 
 class CameraController : public QObject
 {
     Q_OBJECT
 private:
+    QList<QCameraDevice> cameras;
     QCamera* camera;
     QMediaCaptureSession captureSession;
     QVideoSink* videoSink;

@@ -8,6 +8,7 @@
 #include "networkinfo.h"
 #include "mjpegserver.h"
 #include "cameracontroller.h"
+#include "functional"
 //#include <MobileUI>
 
 #include "clienthttpserver.h"
@@ -19,13 +20,11 @@ int main(int argc, char *argv[]) {
     cameraController.startCamera();
 
     MJPEGServer mjpegserver;
-    mjegserver.setCameraController();
+    mjpegserver.setFrameProvider(std::bind(&CameraController::getLastFrame, &cameraController));
     mjpegserver.startServer();
 
+    qDebug() << "Camera and server started";
 
-    qDebug() << "Camera started";
-
-    void handleVideoFrameChanged(const QVideoFrame &frame);
 
 
     QQmlApplicationEngine engine;

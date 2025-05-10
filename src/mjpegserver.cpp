@@ -19,10 +19,6 @@ MJPEGServer::~MJPEGServer()
     server.close();
 }
 
-void MJPEGServer::setLastFrame(const QImage &frame)
-{
-    lastFrame = frame;
-}
 
 void MJPEGServer::newConnection() {
     QTcpSocket *socket = server.nextPendingConnection();
@@ -60,6 +56,12 @@ void MJPEGServer::sendFrames() {
         return;
     }
 
+    if (!m_frameProvider) {
+        qDebug() << "No frame provider set";
+        return;
+    }
+
+    lastFrame = m_frameProvider();
     if (!lastFrame.isNull()) {
         QBuffer buffer;
         buffer.open(QIODevice::WriteOnly);
@@ -93,7 +95,7 @@ void MJPEGServer::sendFrames() {
     }
 }
 
-void MJPEGServer::setFrameProvider(std::function<QVideoFrame()> frameProvider) {
+void MJPEGServer::setFrameProvider(std::function<QImage()> frameProvider) {
     m_frameProvider = frameProvider;
 }
 

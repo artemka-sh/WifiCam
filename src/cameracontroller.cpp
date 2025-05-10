@@ -1,11 +1,10 @@
 #include "cameracontroller.h"
-#include <QDebug>
-#include <QMediaDevices>
+
 
 CameraController::CameraController(QObject *parent)
     : QObject(parent), camera(nullptr), videoSink(new QVideoSink(this))
 {
-    const QList<QCameraDevice> cameras = QMediaDevices::videoInputs();
+    cameras = QMediaDevices::videoInputs();
     if (cameras.isEmpty()) {
         qDebug() << "No cameras found";
         return;
@@ -47,7 +46,7 @@ void CameraController::handleVideoFrameChanged(const QVideoFrame &frame)
 {
     QImage image = frame.toImage();
     if (!image.isNull()) {
-        lastFrame = image.scaled(640, 480, Qt::KeepAspectRatio);
+        lastFrame = image.scaled(1920, 1080, Qt::KeepAspectRatio);
         qDebug() << "Captured frame:" << lastFrame.size();
     } else {
         qDebug() << "Null frame received";

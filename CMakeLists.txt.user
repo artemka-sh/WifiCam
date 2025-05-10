@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE QtCreatorProject>
-<!-- Written by QtCreator 15.0.1, 2025-05-09T03:54:16. -->
+<!-- Written by QtCreator 15.0.1, 2025-05-10T23:49:28. -->
 <qtcreator>
  <data>
   <variable>EnvironmentId</variable>
@@ -8,7 +8,7 @@
  </data>
  <data>
   <variable>ProjectExplorer.Project.ActiveTarget</variable>
-  <value type="qlonglong">0</value>
+  <value type="qlonglong">1</value>
  </data>
  <data>
   <variable>ProjectExplorer.Project.EditorSettings</variable>
@@ -104,15 +104,15 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_BUILD_TYPE:STRING=Debug
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON</value>
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Desktop_Qt_6_8_3-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -162,15 +162,15 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_BUILD_TYPE:STRING=Release
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON</value>
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Desktop_Qt_6_8_3-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -217,15 +217,15 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON</value>
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Desktop_Qt_6_8_3-RelWithDebInfo</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -272,15 +272,15 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON</value>
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Desktop_Qt_6_8_3-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -328,15 +328,15 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
+    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
 -DCMAKE_BUILD_TYPE:STRING=MinSizeRel
 -DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
 -DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON</value>
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Desktop_Qt_6_8_3-MinSizeRel</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -463,26 +463,26 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DCMAKE_BUILD_TYPE:STRING=Debug
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
--DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DANDROID_PLATFORM:STRING=android-23
--DANDROID_ABI:STRING=arm64-v8a</value>
+-DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_BUILD_TYPE:STRING=Debug
+-DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Android_Qt_6_8_3_Clang_arm64_v8a-Debug</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -540,26 +540,26 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DCMAKE_BUILD_TYPE:STRING=Release
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
--DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DANDROID_PLATFORM:STRING=android-23
--DANDROID_ABI:STRING=arm64-v8a</value>
+-DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_BUILD_TYPE:STRING=Release
+-DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Android_Qt_6_8_3_Clang_arm64_v8a-Release</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -614,26 +614,26 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
--DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DANDROID_PLATFORM:STRING=android-23
--DANDROID_ABI:STRING=arm64-v8a</value>
+-DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
+-DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Android_Qt_6_8_3_Clang_arm64_v8a-RelWithDebInfo</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -688,26 +688,26 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
--DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DANDROID_PLATFORM:STRING=android-23
--DANDROID_ABI:STRING=arm64-v8a</value>
+-DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_BUILD_TYPE:STRING=RelWithDebInfo
+-DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="int" key="EnableQmlDebugging">0</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Android_Qt_6_8_3_Clang_arm64_v8a-Profile</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
@@ -763,26 +763,26 @@
     <value type="int" key="CMake.Configure.BaseEnvironment">2</value>
     <value type="bool" key="CMake.Configure.ClearSystemEnvironment">false</value>
     <valuelist type="QVariantList" key="CMake.Configure.UserEnvironmentChanges"/>
-    <value type="QString" key="CMake.Initial.Parameters">-DCMAKE_GENERATOR:STRING=Unix Makefiles
--DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake
--DANDROID_STL:STRING=c++_shared
--DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+    <value type="QString" key="CMake.Initial.Parameters">-DANDROID_STL:STRING=c++_shared
 -DCMAKE_CXX_COMPILER:FILEPATH=%{Compiler:Executable:Cxx}
--DCMAKE_BUILD_TYPE:STRING=MinSizeRel
--DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
--DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
--DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
--DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
--DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
--DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
--DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
--DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
--DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
--DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
--DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 -DANDROID_PLATFORM:STRING=android-23
--DANDROID_ABI:STRING=arm64-v8a</value>
+-DQT_HOST_PATH:PATH=%{Qt:QT_HOST_PREFIX}
+-DANDROID_USE_LEGACY_TOOLCHAIN_FILE:BOOL=OFF
+-DCMAKE_TOOLCHAIN_FILE:FILEPATH=/home/Artem/Android/Sdk/ndk/26.1.10909125/build/cmake/android.toolchain.cmake
+-DQT_USE_TARGET_ANDROID_BUILD_DIR:BOOL=ON
+-DQT_QMAKE_EXECUTABLE:FILEPATH=%{Qt:qmakeExecutable}
+-DQT_NO_GLOBAL_APK_TARGET_PART_OF_ALL:BOOL=ON
+-DCMAKE_COLOR_DIAGNOSTICS:BOOL=ON
+-DCMAKE_PREFIX_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_BUILD_TYPE:STRING=MinSizeRel
+-DANDROID_NDK:PATH=/home/Artem/Android/Sdk/ndk/26.1.10909125
+-DANDROID_ABI:STRING=arm64-v8a
+-DCMAKE_C_COMPILER:FILEPATH=%{Compiler:Executable:C}
+-DANDROID_SDK_ROOT:PATH=/home/Artem/Android/Sdk
+-DCMAKE_GENERATOR:STRING=Unix Makefiles
+-DCMAKE_CXX_FLAGS_INIT:STRING=%{Qt:QML_DEBUG_FLAG}
+-DCMAKE_FIND_ROOT_PATH:PATH=%{Qt:QT_INSTALL_PREFIX}
+-DCMAKE_PROJECT_INCLUDE_BEFORE:FILEPATH=%{BuildConfig:BuildDirectory:NativeFilePath}/.qtc/package-manager/auto-setup.cmake</value>
     <value type="QString" key="ProjectExplorer.BuildConfiguration.BuildDirectory">/home/Artem/qt/WifiCam/build/Android_Qt_6_8_3_Clang_arm64_v8a-MinSizeRel</value>
     <valuemap type="QVariantMap" key="ProjectExplorer.BuildConfiguration.BuildStepList.0">
      <valuemap type="QVariantMap" key="ProjectExplorer.BuildStepList.Step.0">
@@ -873,7 +873,7 @@
     <valuelist type="QVariantList" key="PE.EnvironmentAspect.Changes"/>
     <value type="bool" key="PE.EnvironmentAspect.PrintOnRun">false</value>
     <value type="QString" key="PerfRecordArgsId">-e cpu-cycles --call-graph dwarf,4096 -F 250</value>
-    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName"></value>
+    <value type="QString" key="ProjectExplorer.ProjectConfiguration.DisplayName">appWifiCam</value>
     <value type="QString" key="ProjectExplorer.ProjectConfiguration.Id">Qt4ProjectManager.AndroidRunConfiguration:</value>
     <value type="QString" key="ProjectExplorer.RunConfiguration.BuildKey">appWifiCam</value>
     <value type="bool" key="ProjectExplorer.RunConfiguration.Customized">true</value>

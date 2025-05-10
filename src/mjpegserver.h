@@ -22,7 +22,6 @@ public:
     explicit MJPEGServer(QObject *parent = nullptr);
     virtual ~MJPEGServer();
     void newConnection();
-    void setLastFrame(const QImage &frame);
     void sendFrames();
     void setFrameProvider(std::function<QImage()> provider);
     void handleClientDisconnected();
