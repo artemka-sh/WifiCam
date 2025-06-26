@@ -26,18 +26,4 @@ Canvas {
         id: connectInfo
     }
 
-
-    Button {
-        id:button;
-        text: "Click me "
-        anchors.verticalCenterOffset: 23
-        anchors.horizontalCenterOffset: -248
-        anchors.centerIn: parent
-        onClicked: {
-            header.color = Qt.rgba(Math.random(), Math.random(), Math.random());
-        }
-    }
-
-
-
 }

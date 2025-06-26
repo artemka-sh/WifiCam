@@ -2,9 +2,10 @@
 
 
 CameraController::CameraController(QObject *parent)
-    : QObject(parent), camera(nullptr), videoSink(new QVideoSink(this))
+    : m_parent(parent), camera(nullptr), videoSink(new QVideoSink(this))
 {
     cameras = QMediaDevices::videoInputs();
+
     if (cameras.isEmpty()) {
         qDebug() << "No cameras found";
         return;
@@ -17,6 +18,11 @@ CameraController::CameraController(QObject *parent)
 
     connect(videoSink, &QVideoSink::videoFrameChanged, this, &CameraController::handleVideoFrameChanged);
     connect(camera, &QCamera::errorOccurred, this, &CameraController::handleCameraError);
+
+    model.addCameras(cameras);
+    //ЗАРЕГИСТРИРОВАТЬ МОДЕЛЬ И ДОБАВИТЬ ИЗ КОНСТРУКТОРА В ПЕРЕМЕННУЮ
+    static_cast<QQmlApplicationEngine*>(m_parent)->rootContext()->setContextProperty("cameraModel", &model);       // ;->rootContext()->setContextProperty("networkInfo", networkInfo);
+
 }
 
 CameraController::~CameraController()

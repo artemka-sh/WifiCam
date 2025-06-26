@@ -9,6 +9,9 @@
 #include <QMutex>
 #include <QDebug>
 #include <QMediaDevices>
+#include <QQmlApplicationEngine> //для установки контекста
+#include <QQmlContext>
+#include "cameramodel.h"
 
 
 class CameraController : public QObject
@@ -21,6 +24,8 @@ private:
     QVideoSink* videoSink;
     QImage lastFrame;
     mutable QMutex m_frameMutex;
+    CameraModel model;
+    QObject *m_parent;
 public:
     explicit CameraController(QObject *parent = nullptr);
     ~CameraController();

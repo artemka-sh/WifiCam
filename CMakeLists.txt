@@ -1,6 +1,6 @@
 cmake_minimum_required(VERSION 3.16)
 
-project(WifiCam VERSION 0.1 LANGUAGES CXX)
+project(WifiCamProj VERSION 0.1 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -12,13 +12,13 @@ find_package(Qt6 REQUIRED COMPONENTS Quick HttpServer Core Gui Qml Multimedia Qu
 
 qt_standard_project_setup(REQUIRES 6.5)
 
-qt_add_executable(appWifiCam MANUAL_FINALIZATION
+qt_add_executable(WifiCam MANUAL_FINALIZATION
     src/main.cpp
     qml/qml.qrc
 )
 
-qt_add_qml_module(appWifiCam
-    URI WifiCam
+qt_add_qml_module(WifiCam
+    URI WifiCamProj
     VERSION 1.0
     QML_FILES
         qml/Main.qml
@@ -28,6 +28,7 @@ qt_add_qml_module(appWifiCam
         qml/ConnectInfo.qml
         qml/PermissionReq.qml
         qml/Permission-denied.qml
+        qml/ChooseCameraPop.qml
     SOURCES
         src/clienthttpserver.h
         src/networkinfo.h
@@ -36,20 +37,23 @@ qt_add_qml_module(appWifiCam
         src/mjpegserver.cpp
         src/cameracontroller.h
         src/cameracontroller.cpp
+        src/cameramodel.h
+        src/cameramodel.cpp
     RESOURCES qml/qml.qrc
+
 
 )
 
 add_subdirectory(deps/MobileUI/)
 
-set_target_properties(appWifiCam PROPERTIES
+set_target_properties(WifiCam PROPERTIES
     MACOSX_BUNDLE_BUNDLE_VERSION ${PROJECT_VERSION}
     MACOSX_BUNDLE_SHORT_VERSION_STRING ${PROJECT_VERSION_MAJOR}.${PROJECT_VERSION_MINOR}
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
 )
 
-target_link_libraries(appWifiCam
+target_link_libraries(WifiCam
     PRIVATE
     Qt6::Core
     Qt6::Gui
@@ -63,11 +67,13 @@ target_link_libraries(appWifiCam
 
 )
 
-qt_finalize_target(appWifiCam)
+qt_finalize_target(WifiCam)
 
 include(GNUInstallDirs)
-install(TARGETS appWifiCam
+install(TARGETS WifiCam
     BUNDLE DESTINATION .
     LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+

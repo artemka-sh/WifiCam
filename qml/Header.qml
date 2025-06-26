@@ -25,6 +25,7 @@ Rectangle{
             spacing: spacing
             leftPadding: padding
 
+
             Image {
                 id: appIco
                 width: head.height
@@ -32,6 +33,13 @@ Rectangle{
                 sourceSize: Qt.size(iconSize, iconSize)
                 source: "qrc:/webcam.svg"
                 fillMode: Image.PreserveAspectFit
+                MouseArea {
+                        anchors.fill: parent
+                        onClicked: {
+                            console.log("Пасхалка!")
+                            head.color = Qt.rgba(Math.random(), Math.random(), Math.random());
+                        }
+                    }
             }
 
             Text{
@@ -49,7 +57,7 @@ Rectangle{
         }
 
 
-        Row {
+        Row {       //это только выглядит как говнокод, но содержит идею
             id: switch_and_parameters_row
             width: parent.width
             height: parent.height
@@ -62,7 +70,7 @@ Rectangle{
                 width: head.height
                 height: head.height
                 anchors.verticalCenter: parent.verticalCenter
-
+                onClicked: resolutionPopup.open()
 
                 background: Rectangle {
                     color: "transparent"
@@ -80,9 +88,7 @@ Rectangle{
                     anchors.centerIn: parent
                 }
 
-                onClicked: {
-                    win.color = Qt.rgba(Math.random(), Math.random(), Math.random());
-                }
+
             }
 
             RoundButton {
@@ -91,13 +97,12 @@ Rectangle{
                 height: head.height
                 anchors.verticalCenter: parent.verticalCenter
 
-                // Прозрачный фон
+
                 background: Rectangle {
                     color: "transparent"
                     radius: parent.width / 2
                 }
 
-                // Иконка вместо текста
                 contentItem: Image {
                     id: switchCameraIcon2
                     width: parent.width * headerHeightRatio
@@ -109,13 +114,18 @@ Rectangle{
                 }
 
                 onClicked: {
-                    win.color = Qt.rgba(Math.random(), Math.random(), Math.random());
+                    head.color = Qt.rgba(Math.random(), Math.random(), Math.random());
                 }
             }
         }
     }
 
 
+
+    // Всплывающее окно с прокручиваемым списком камер
+    ChooseCameraPop {
+        id: resolutionPopup
+    }
 
 
 

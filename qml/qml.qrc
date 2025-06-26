@@ -11,5 +11,6 @@
         <file>Header.qml</file>
         <file alias="wifi.svg">res/signal_wifi_3_bar.svg</file>
         <file>ConnectInfo.qml</file>
+        <file>ChooseCameraPop.qml</file>
     </qresource>
 </RCC>
