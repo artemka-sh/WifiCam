@@ -61,7 +61,7 @@ Rectangle {
 
             // Порт
             Text {
-                text: "DroidCam Port: 8081"
+                text: "WifiCam Port: 8081"
                 font.pixelSize: 16
                 color:infoTextColor
                 Layout.fillWidth: true

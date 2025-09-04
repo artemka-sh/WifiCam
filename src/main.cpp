@@ -19,6 +19,7 @@ int main(int argc, char *argv[]) {
 
     CameraController cameraController(&engine);
     cameraController.startCamera();
+    engine.rootContext()->setContextProperty("cameraController", &cameraController);
 
     MJPEGServer mjpegserver;
     mjpegserver.setFrameProvider(std::bind(&CameraController::getLastFrame, &cameraController));

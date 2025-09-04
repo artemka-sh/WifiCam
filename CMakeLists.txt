@@ -37,8 +37,8 @@ qt_add_qml_module(WifiCam
         src/mjpegserver.cpp
         src/cameracontroller.h
         src/cameracontroller.cpp
-        src/cameramodel.h
-        src/cameramodel.cpp
+        src/camera_list_model.h
+        src/camera_list_model.cpp
     RESOURCES qml/qml.qrc
 
 

@@ -70,7 +70,7 @@ Rectangle{
                 width: head.height
                 height: head.height
                 anchors.verticalCenter: parent.verticalCenter
-                onClicked: resolutionPopup.open()
+                onClicked: chooseCameraPopup.open()
 
                 background: Rectangle {
                     color: "transparent"
@@ -122,9 +122,10 @@ Rectangle{
 
 
 
-    // Всплывающее окно с прокручиваемым списком камер
+
     ChooseCameraPop {
-        id: resolutionPopup
+        id: chooseCameraPopup
+        objectName: "chooseCameraPopup"
     }
 
 

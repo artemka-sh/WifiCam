@@ -2,10 +2,9 @@ import QtQuick
 import QtQuick.Controls
 import QtQuick.Layouts
 
-// ПОРА ИСПОЛЬЗОВАТЬ С++ МОДЕЛЬ
 
     Popup {
-        id: resolutionPopup
+        id: chooseCameraPopup
         x: (main.width - width) / 2
         y: (main.height - height) / 2
         width: 300
@@ -14,6 +13,7 @@ import QtQuick.Layouts
         focus: true
         closePolicy: Popup.CloseOnEscape | Popup.CloseOnPressOutside
 
+        signal cameraSelected(string id)
 
 
             ListView {
@@ -21,7 +21,7 @@ import QtQuick.Layouts
                 anchors.fill: parent
                 anchors.margins: 10
                 clip: true // Обрезаем элементы за пределами области
-                model: cameraModel // Модель из C++
+                model: cameraListModel
                 spacing: 10
 
                 delegate: Rectangle {
@@ -33,16 +33,21 @@ import QtQuick.Layouts
 
                     Text {
                         anchors.centerIn: parent
-                        text: model.cameraName // Имя камеры из модели
-                        font.pixelSize: 20
+                        text: model.displayName
+                        font.pixelSize: 10
+                    }
+                    Text {
+                        anchors.centerIn: parent
+                        text: model.displayId
+                        font.pixelSize: 10
                     }
 
                     MouseArea {
                         anchors.fill: parent
                         onClicked: {
-                            console.log("Выбрана камера:", model.cameraName)
-                            cameraController.selectCamera(model.cameraId) // Вызов C++ метода
-                            resolutionPopup.close()
+                            console.log("Выбрана камера:", model.displayName)
+                            cameraController.cameraSelected(model.deviceId)
+                            chooseCameraPopup.close()
                         }
                     }
                 }
