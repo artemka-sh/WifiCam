@@ -65,6 +65,7 @@ Rectangle{
             rightPadding: padding
             Layout.alignment: Qt.AlignRight
 
+            // КНОПКА СМЕНЫ КАМЕРЫ
             RoundButton {
                 id: switchCameraButton1
                 width: head.height
@@ -91,11 +92,13 @@ Rectangle{
 
             }
 
+            // КНОПКА НАСТРОЕК
             RoundButton {
                 id: switchCameraButton2
                 width: head.height
                 height: head.height
                 anchors.verticalCenter: parent.verticalCenter
+                onClicked: preferencesPop.open()
 
 
                 background: Rectangle {
@@ -113,9 +116,6 @@ Rectangle{
                     anchors.centerIn: parent
                 }
 
-                onClicked: {
-                    head.color = Qt.rgba(Math.random(), Math.random(), Math.random());
-                }
             }
         }
     }

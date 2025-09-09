@@ -21,6 +21,10 @@ Canvas {
         id: header
     }
 
+    CameraToolbar
+    {
+        id: cameraToolBar
+    }
 
     ConnectInfo {
         id: connectInfo

@@ -12,12 +12,12 @@ CameraController::CameraController(QObject *parent)
     }
     qDebug() << "Found cameras:" << cameras.size();
 
-    camera = std::make_unique<QCamera>(cameras.first());
-    captureSession.setCamera(camera.get());
+    setNewCamera(cameras.first()); //по умолчанию первую попавшуюся
+
     captureSession.setVideoSink(videoSink);
 
     connect(videoSink, &QVideoSink::videoFrameChanged, this, &CameraController::handleVideoFrameChanged);
-    connect(camera.get(), &QCamera::errorOccurred, this, &CameraController::handleCameraError);
+    // connect(camera.get(), &QCamera::errorOccurred, this, &CameraController::handleCameraError);  перенесено в setNewCamera
 
     static_cast<QQmlApplicationEngine*>(m_parent)->rootContext()->setContextProperty("cameraListModel", &cameraListModelObject);
 
@@ -68,29 +68,35 @@ void CameraController::cameraSelected(QString deviceId)
     cameras = QMediaDevices::videoInputs();
     auto newCamIt = std::find_if(cameras.begin(), cameras.end(), [&deviceId](const QCameraDevice &cam)
     {
-        return deviceId == cam.id();
+        return QString::fromUtf8(cam.id()) == deviceId;
     });
-    if (newCamIt != cameras.end()) {
 
-        // Остановить и отвязать старую
-        if (camera) {
-            camera->stop();
-            disconnect(camera.get(), nullptr, this, nullptr);
-        }
-        captureSession.setCamera(nullptr); // важно: освободить устройство из сессии
-
-
-        qDebug() << "Подключение новой камеры:" << newCamIt->description();
-        camera = std::make_unique<QCamera>(*newCamIt);
-        captureSession.setCamera(camera.get());
-
-                                                                                          //ВРЕМЕННОЕ РЕШЕНИЕ, СОЗДАТЬ ФУНКЦИЮ SELECT CAMERA
-        connect(camera.get(), &QCamera::errorOccurred, this, &CameraController::handleCameraError);
-
-        startCamera();
-    } else {
+    if (newCamIt == cameras.end()) {
         qDebug() << "Такой камеры ненайдено";
+        return;
     }
 
 
+    qDebug() << "Подключение новой камеры:" << newCamIt->description();
+    setNewCamera(*newCamIt);
+
+}
+
+
+void CameraController::setNewCamera(const QCameraDevice& device)
+{
+    // Остановить и отвязать старую
+    if (camera) {
+        camera->stop();
+        disconnect(camera.get(), nullptr, this, nullptr);   //ОТВЯЗКА ОТСУТСТВУЮЩЕГО, ЕСЛИ НЕ ПРЕДУСМОТРЕННО
+    }
+    captureSession.setCamera(nullptr); // важно: освободить устройство из сессии
+
+    camera = std::make_unique<QCamera>(device);
+    captureSession.setCamera(camera.get());
+
+
+    connect(camera.get(), &QCamera::errorOccurred, this, &CameraController::handleCameraError);
+
+    startCamera();
 }

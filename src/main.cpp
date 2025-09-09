@@ -1,7 +1,5 @@
 #include <QGuiApplication>
 #include <QQmlApplicationEngine>
-
-
 #include <QSet>
 #include <QDebug>
 #include <QQmlContext>
@@ -9,7 +7,9 @@
 #include "mjpegserver.h"
 #include "cameracontroller.h"
 #include "functional"
-//#include <MobileUI>
+#include <MobileUI>
+
+
 
 #include "clienthttpserver.h"
 
@@ -20,15 +20,12 @@ int main(int argc, char *argv[]) {
     CameraController cameraController(&engine);
     cameraController.startCamera();
     engine.rootContext()->setContextProperty("cameraController", &cameraController);
+    qDebug() << "Camera started";
 
     MJPEGServer mjpegserver;
     mjpegserver.setFrameProvider(std::bind(&CameraController::getLastFrame, &cameraController));
     mjpegserver.startServer();
-
-    qDebug() << "Camera and server started";
-
-
-
+    qDebug() << "Mjpeg server started";
 
 
     NetworkInfo *networkInfo = new NetworkInfo(&engine);
@@ -36,6 +33,8 @@ int main(int argc, char *argv[]) {
 
     // PermissionHandler permissionHandler;
     // engine_context->setContextProperty("permissionHandler", &permissionHandler);
+
+    MobileUI::registerQML();
 
     engine.load(QUrl(QStringLiteral("qrc:/Main.qml")));
 

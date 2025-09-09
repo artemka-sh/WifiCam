@@ -29,6 +29,8 @@ qt_add_qml_module(WifiCam
         qml/PermissionReq.qml
         qml/Permission-denied.qml
         qml/ChooseCameraPop.qml
+        qml/PreferencesPop.qml
+        qml/CameraToolbar.qml
     SOURCES
         src/clienthttpserver.h
         src/networkinfo.h
@@ -40,6 +42,7 @@ qt_add_qml_module(WifiCam
         src/camera_list_model.h
         src/camera_list_model.cpp
     RESOURCES qml/qml.qrc
+    RESOURCES todo
 
 
 )

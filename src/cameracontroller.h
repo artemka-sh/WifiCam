@@ -36,6 +36,7 @@ public:
     ~CameraController();
     void startCamera();
     QImage getLastFrame() const;
+    void setNewCamera(const QCameraDevice& device);
 
 private slots:
     void handleVideoFrameChanged(const QVideoFrame &frame);

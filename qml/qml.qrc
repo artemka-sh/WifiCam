@@ -12,5 +12,14 @@
         <file alias="wifi.svg">res/signal_wifi_3_bar.svg</file>
         <file>ConnectInfo.qml</file>
         <file>ChooseCameraPop.qml</file>
+        <file>PreferencesPop.qml</file>
+        <file>CameraToolbar.qml</file>
+        <file alias="rotate_left.svg">res/rotate_left.svg</file>
+        <file alias="flash_on.svg">res/flash_on.svg</file>
+        <file alias="flash_on-fill.svg">res/flash_on-fill.svg</file>
+        <file alias="flash_off.svg">res/flash_off.svg</file>
+        <file alias="flash_off-fill.svg">res/flash_off-fill.svg</file>
+        <file alias="center_focus_strong.svg">res/center_focus_strong.svg</file>
+        <file alias="center_focus_strong-fill.svg">res/center_focus_strong-fill.svg</file>
     </qresource>
 </RCC>

@@ -5,7 +5,7 @@
 import QtQuick
 import QtQuick.Controls
 import QtQuick.Window
-
+import MobileUI
 
 ApplicationWindow {
     id: main
@@ -16,6 +16,11 @@ ApplicationWindow {
     visibility: Window.AutomaticVisibility
     color: Theme.colorBackground
     visible: true
+
+    MobileUI {
+            id: mobile
+            screenAlwaysOn: true
+        }
 
     Loader {
         id: contentLoader
